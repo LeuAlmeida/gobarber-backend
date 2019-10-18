@@ -8,3 +8,6 @@ Permite o live reload enquanto o servidor estiver ativo
 
 #### -D
 Sintaxe para instalação apenas no ambiente de desenvolvimento
+
+#### nodemon.json
+Arquivo para configuração do Nodemon usando o Sucrase
