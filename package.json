@@ -8,6 +8,7 @@
     "dev:debug": "nodemon --inspect src/server.js"
   },
   "dependencies": {
+    "eslint": "^6.5.1",
     "express": "^4.17.1"
   },
   "devDependencies": {
