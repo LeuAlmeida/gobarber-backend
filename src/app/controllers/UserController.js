@@ -25,7 +25,6 @@ class UserController {
     // Buscar o usuário que quer ser ediado dentro do banco de dados
     const user = await User.findByPk(req.userId);
 
-
     // Verificação para alteração do e-mail
     if (email !== user.email) {
       const userExists = await User.findOne({ where: { email } });
@@ -37,7 +36,7 @@ class UserController {
 
     // Verificação para alteração de senha
     if (oldPassword && !(await user.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Password does not match. '});
+      return res.status(401).json({ error: 'Password does not match. ' });
     }
 
     // Atualiza as informações conforme o usuário enviar pelo corpo da requisição.
