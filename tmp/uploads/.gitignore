@@ -1,0 +1,4 @@
+# Ignore files when development server
+*.jpg
+*.png
+*.gif
