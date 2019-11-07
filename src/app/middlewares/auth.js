@@ -9,7 +9,7 @@ export default async (req, res, next) => {
 
   // Verifica a existência do token
   if (!authHeader) {
-    return res.status(401).json({ error: 'Token not provided.' })
+    return res.status(401).json({ error: 'Token not provided.' });
   }
 
   // Recebe o token e dá um split para remover o "Bearer" e manter apenas o token.
@@ -25,9 +25,8 @@ export default async (req, res, next) => {
 
     // Se chegou no next(), o usuário está pronto para acessar ao controller
     return next();
-
   } catch (err) {
     // Em caso de erro, deve retornar a mensagem abaixo
-    return res.status(401).json({ error: 'Token invalid '})
+    return res.status(401).json({ error: 'Token invalid ' });
   }
 };
