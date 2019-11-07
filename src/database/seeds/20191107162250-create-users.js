@@ -1,26 +1,34 @@
-'use strict';
+import bcrypt from 'bcryptjs'
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
+    return queryInterface.bulkInsert(
+      'users',
+      [
+        {
+          id: 1,
+          name: 'Léu Almeida',
+          email: 'leo@webid.net.br',
+          password: bcrypt('admin', 8),
+          provider: true,
+          created_at: new Date(),
+          updated_at: new Date()
+        },
+        {
+          id: 2,
+          name: 'Usuário Lorem',
+          email: 'eu@leunardo.dev',
+          password: bcrypt('admin', 8),
+          provider: false,
+          created_at: new Date(),
+          updated_at: new Date()
+        },
+      ],
+      {}
+    );
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
-  }
+    return queryInterface.bulkDelete('users', null, {});
+  },
 };
