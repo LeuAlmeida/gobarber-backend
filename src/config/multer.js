@@ -10,7 +10,7 @@ export default {
         if (err) return cb(err);
 
         return cb(null, res.toString('hex') + extname(file.originalname));
-      })
+      });
     },
   }),
 };
