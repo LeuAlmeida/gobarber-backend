@@ -10,6 +10,13 @@ module.exports = {
           created_at: new Date(),
           updated_at: new Date(),
         },
+        {
+          id: 2,
+          name: 'avatar-placeholder.JPEG',
+          path: 'f56d9ef8097628f613eed416d645e21c.JPEG',
+          created_at: new Date(),
+          updated_at: new Date(),
+        },
       ],
       {}
     );
