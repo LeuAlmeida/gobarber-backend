@@ -33,6 +33,10 @@ class AppointmentController {
 
     const hourStart = startOfHour(parseISO(date));
 
+    if (isBefore(hourStart, new Date())) {
+      return res.status(400).json({ error: 'Past dates are not permitted.' });
+    }
+
     const appointment = await Appointment.create({
       user_id: req.userId,
       provider_id,
