@@ -5,6 +5,8 @@ import User from '../models/User';
 import Appointment from '../models/Appointment';
 
 class AppointmentController {
+  async index(req, res) {}
+
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -34,6 +36,7 @@ class AppointmentController {
     /**
      * Check for past dates
      */
+
     const hourStart = startOfHour(parseISO(date));
 
     if (isBefore(hourStart, new Date())) {
