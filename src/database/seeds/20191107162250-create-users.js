@@ -13,6 +13,7 @@ module.exports = {
           provider: true,
           created_at: new Date(),
           updated_at: new Date(),
+          avatar_id: null,
         },
         {
           id: 2,
@@ -22,6 +23,7 @@ module.exports = {
           provider: false,
           created_at: new Date(),
           updated_at: new Date(),
+          avatar_id: null,
         },
       ],
       {}
