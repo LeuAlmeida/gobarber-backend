@@ -4,6 +4,7 @@ import { startOfHour, parseISO, isBefore } from 'date-fns';
 import User from '../models/User';
 import File from '../models/File';
 import Appointment from '../models/Appointment';
+import Notification from '../schemas/Notification';
 
 class AppointmentController {
   async index(req, res) {
@@ -92,6 +93,17 @@ class AppointmentController {
       user_id: req.userId,
       provider_id,
       date: hourStart,
+    });
+
+    /**
+     * Notify appointment provider
+     */
+
+    const user = await User.findByPk(req.userId);
+
+    await Notification.create({
+      content: `Novo agendamento de ${user.name} para dia 22 de Junho às 8:40h`,
+      user: provider_id,
     });
 
     return res.json(appointment);
