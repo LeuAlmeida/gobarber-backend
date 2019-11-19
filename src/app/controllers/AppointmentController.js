@@ -108,7 +108,7 @@ class AppointmentController {
     );
 
     await Notification.create({
-      content: `Novo agendamento de ${user.name} para dia 22 de Junho, às 8:40h`,
+      content: `Novo agendamento de ${user.name} para ${formattedDate}`,
       user: provider_id,
     });
 
