@@ -13,7 +13,7 @@ class Mail {
     });
   }
 
-  sendmail(message) {
+  sendMail(message) {
     return this.transporter.sendMail({
       ...mailConfig.default,
       ...message,
