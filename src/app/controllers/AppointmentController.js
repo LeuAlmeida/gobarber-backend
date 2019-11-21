@@ -124,6 +124,10 @@ class AppointmentController {
 
     return res.json(appointment);
   }
+
+  async delete(req, res) {
+    return res.json();
+  }
 }
 
 export default new AppointmentController();
