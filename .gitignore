@@ -1,5 +1,2 @@
-# Ignore node modules
+.env
 node_modules/
-
-# Ignore auth configs
-# src/config/auth.js
