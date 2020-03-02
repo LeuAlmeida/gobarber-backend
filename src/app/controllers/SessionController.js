@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import * as Yup from 'yup';
 
 import User from '../models/User';
 import File from '../models/File';
